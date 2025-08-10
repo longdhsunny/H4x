@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DINHLONG — FULL RGB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="rbg-bg" id="rbg"></div>
+
+<div class="container" id="app" aria-hidden="true">
+  <div class="header">
+    <div class="brand">DINHLONG <span class="neon">ULTRA RGB</span></div>
+    <div class="modes" id="modeButtons"></div>
+    <div class="actions">
+      <button id="exportBtn" class="btn">Export</button>
+      <button id="resetBtn" class="btn">Reset</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <aside class="panel">
+      <div class="section-title">GLOBAL</div>
+      <div><label>Headshot <span id="gHsText">70%</span></label><input id="gHs" type="range" class="range" min="0" max="100" value="70"></div>
+      <div><label>Sensitivity <span id="gSensText">45</span></label><input id="gSens" type="range" class="range" min="1" max="100" value="45"></div>
+      <div><label>Stability <span id="gStabText">60</span></label><input id="gStab" type="range" class="range" min="0" max="100" value="60"></div>
+      <div class="toggles" id="globalToggles"></div>
+      <div style="margin-top:10px"><button id="applyAll" class="btn">Apply to All</button></div>
+      <div style="height:12px"></div>
+      <div class="section-title">PROFILES</div>
+      <input id="profileName" placeholder="Profile name">
+      <div style="margin-top:8px"><button id="saveProfile" class="btn">Save</button><button id="loadProfile" class="btn">Load</button></div>
+      <select id="profileList" size="6" style="margin-top:10px;width:100%"></select>
+    </aside>
+
+    <section class="panel">
+      <div class="section-title">WEAPONS</div>
+      <div id="weaponsRow" style="margin-bottom:12px"></div>
+
+      <div id="weaponPanel" style="margin-top:8px">
+        <h3 id="weaponTitle">M1887</h3>
+        <div class="toggles" id="weaponToggles"></div>
+        <div class="controls" id="weaponControls" style="margin-top:8px"></div>
+        <div style="margin-top:10px"><button id="saveWeapon" class="btn primary">Save Weapon</button> <button id="saveAll" class="btn">Save All</button></div>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <div class="section-title">EXTRAS & VISUALS</div>
+      <div id="extrasGrid" class="controls"></div>
+    </section>
+
+    <aside class="panel">
+      <div class="section-title">SHORTCUTS</div>
+      <div>Toggle UI: <kbd>Insert</kbd></div>
+      <div>Quick Save: <kbd>Ctrl+S</kbd></div>
+      <div style="height:12px"></div>
+      <div class="section-title">EXPORT</div>
+      <div><button id="downloadBtn" class="btn primary">Download JSON</button></div>
+      <div style="height:12px"></div>
+      <div class="section-title">ABOUT</div>
+      <div class="muted">This is a UI mockup only. No game interaction.</div>
+    </aside>
+  </div>
+
+  <div class="footer">DINHLONG ULTRA RGB — MOCKUP</div>
+</div>
+
+<!-- lock overlay to require key -->
+<div id="lockOverlay" class="lock-overlay" aria-hidden="false">
+  <div class="lock-card">
+    <h2>ACCESS REQUIRED</h2>
+    <div class="hint">Enter your access key to unlock the interface</div>
+    <input id="accessKey" type="password" placeholder="Enter key">
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
+      <button id="unlock" class="btn primary">Unlock</button>
+      <button id="helpBtn" class="btn ghost">Help</button>
+    </div>
+    <div id="lockMsg" style="color:#ff9; margin-top:10px"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
